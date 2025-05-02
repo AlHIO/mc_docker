@@ -101,6 +101,13 @@
    docker compose logs -f
    ```
 
+4. 打開關閉：
+
+   ```bash
+   docker start mc-server
+   docker stop mc-server
+   ```
+
 ## 安裝 Docker Compose Plugin
 
 若尚未安裝 v2+ Compose，請依照以下步驟安裝官方 Compose Plugin：
