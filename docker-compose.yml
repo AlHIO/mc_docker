@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  mc:
+    image: itzg/minecraft-server:latest # image 名稱
+    container_name: mc-server
+    environment:
+      EULA: "TRUE"
+      MEMORY: "4G"
+      VERSION: "latest" # 選擇最新版本 之後用k8s控制
+      MODE: "survival" # 可選 survival, creative, adventure...
+      ONLINE_MODE: "TRUE" # 是否驗證正版
+    ports:
+      - "25565:25565" # port
+    volumes:
+      - ./data:/data
+    restart: unless-stopped # 因為是server不停止
