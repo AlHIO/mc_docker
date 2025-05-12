@@ -12,7 +12,6 @@
 
   * [使用 ](#使用-docker-run)[`docker run`](#使用-docker-run)
   * [使用 Docker Compose](#使用-docker-compose)
-* [安裝 Docker Compose Plugin](#安裝-docker-compose-plugin)
 * [設定說明](#設定說明)
 * [資料持久化](#資料持久化)
 * [進階應用](#進階應用)
