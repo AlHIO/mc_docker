@@ -64,46 +64,7 @@
    docker start mc-server
    docker stop mc-server
    ```
-
-## 安裝 Docker Compose Plugin
-
-若尚未安裝 v2+ Compose，請依照以下步驟安裝官方 Compose Plugin：
-
-1. 安裝必要工具：
-
-   ```bash
-   sudo apt update
-   sudo apt install -y ca-certificates curl gnupg lsb-release
-   ```
-2. 新增 Docker 官方 GPG Key：
-
-   ```bash
-   sudo mkdir -p /etc/apt/keyrings
-   curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
-     | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-   ```
-3. 加入 Docker APT Repository：
-
-   ```bash
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
-     https://download.docker.com/linux/ubuntu \
-     $(lsb_release -cs) stable" \
-     | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   ```
-4. 更新並安裝 Compose Plugin：
-
-   ```bash
-   sudo apt update
-   sudo apt install -y docker-compose-plugin
-   ```
-5. 確認安裝並啟動：
-
-   ```bash
-   docker compose version
-   docker compose up -d
-   ```
-
+   
 ## 設定說明
 
 * **EULA**：同意 Mojang EULA，必填 `TRUE`
