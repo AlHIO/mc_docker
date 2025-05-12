@@ -40,50 +40,7 @@
 
 ### 使用 `docker run`
 
-1. 建立資料資料夾並進入：
-
-   ```bash
-   mkdir -p ~/minecraft-server/data
-   cd ~/minecraft-server
-   ```
-2. 執行容器：
-
-   ```bash
-   docker run -d \
-     --name mc-server \
-     -e EULA=TRUE \
-     -e MEMORY=4G \
-     -e VERSION=latest \
-     -p 25565:25565 \
-     -v "$(pwd)/data:/data" \
-     --restart unless-stopped \
-     itzg/minecraft-server:latest
-   ```
-3. 等待容器下載並啟動，完成後即可透過 `localhost:25565`（或替換成實機 IP）連線。
-
-### 使用 Docker Compose
-
-1. 在專案根目錄建立 `docker-compose.yml`：
-
-   ```yaml
-   version: "3.3"
-   services:
-     mc:
-       image: itzg/minecraft-server:latest
-       container_name: mc-server
-       environment:
-         EULA: "TRUE"
-         MEMORY: "4G"
-         VERSION: "latest"
-         MODE: "survival"
-         ONLINE_MODE: "TRUE"
-       ports:
-         - "25565:25565"
-       volumes:
-         - ./data:/data
-       restart: unless-stopped
-   ```
-2. 啟動容器：
+1. 啟動容器：
 
    * 傳統指令（需安裝 `docker-compose` v1）：
 
@@ -95,13 +52,13 @@
      ```bash
      docker compose up -d
      ```
-3. 查看日誌：
+2. 查看日誌：
 
    ```bash
    docker compose logs -f
    ```
 
-4. 打開關閉：
+3. 打開關閉：
 
    ```bash
    docker start mc-server
