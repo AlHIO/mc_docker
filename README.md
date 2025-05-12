@@ -17,8 +17,6 @@
 * [資料持久化](#資料持久化)
 * [進階應用](#進階應用)
 * [防火牆與網路](#防火牆與網路)
-* [常見問題](#常見問題)
-* [授權](#授權)
 
 ## 特性
 
@@ -89,26 +87,3 @@
 * LAN 連線：填寫宿主機內網 IP
 * 公網連線：填寫伺服器公網 IP 或 DDNS 網域
 
-## 常見問題
-
-**Q1: 為什麼 **`** 或 **`** 找不到？**
-
-* 請確認已安裝對應版本：
-
-  * 傳統 v1：`sudo apt install docker-compose`
-  * v2+ Compose Plugin：見 [安裝 Docker Compose Plugin](#安裝-docker-compose-plugin)
-* 若已安裝但仍錯誤，請檢查 `$PATH` 是否包含 `~/.docker/cli-plugins`。
-
-**Q2: 為什麼無法連線？**
-
-1. 確認容器是否運作：`docker ps | grep mc-server`
-2. 檢查日誌錯誤：`docker logs mc-server` 或 `docker compose logs -f`
-3. 確認埠是否綁定：`ss -tln | grep 25565`
-4. 確認防火牆／路由轉發設定
-
-**Q3: 版本不相容？**
-請在 Minecraft 啟動器中切換到與伺服器相同的 `VERSION`。
-
-## 授權
-
-此專案採用 MIT License，詳情請見 [LICENSE](./LICENSE)。
